@@ -1,0 +1,52 @@
+{
+	"songs": [
+		{
+			"title": "KIMI TO HANABI",
+			"artist": "NOVA",
+			"release year": "2025",
+			"genre": ["Pop", "J-Pop"]
+		},
+		{
+			"title": "You You You",
+			"artist": "Maisie Peters",
+			"release year": "2025",
+			"genre": ["Pop", "Indie Pop", "Folk Pop"]
+		},
+		{
+			"title": "Cute Girl Vibes",
+			"artist": "Joangs",
+			"release year": "2025",
+			"genre": ["EDM", "R&B/Soul"]
+		},
+			{
+			"title": "Pretending",
+			"artist": "Alec Benjamin",
+			"release year": "2025",
+			"genre": ["Pop"]
+		},
+		{
+			"title": "The Big Goodbye",
+			"artist": "AJR",
+			"release year": "2025",
+			"genre": ["Pop"]
+		},
+		{
+			"title": "bittersweet",
+			"artist": "Madison Beer",
+			"release year": "2025",
+			"genre": ["Pop"]
+		},
+		{
+			"title": "Love Me In Chapters",
+			"artist": "Chrissi",
+			"release year": "2023",
+			"genre": ["Pop"]
+		},
+		{
+			"title": "sincerely,",
+			"artist": "Yuri Kil",
+			"release year": "2025",
+			"genre": ["Pop"]
+		}
+	]
+}
