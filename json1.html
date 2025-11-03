@@ -1,5 +1,14 @@
-{
-	"songs": [
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JSON Pt1</title>
+</head>
+
+<body>
+	<p id="jsonContent"></p>
+	<script language="javascript">
+	let songs = [
 		{
 			"title": "KIMI TO HANABI",
 			"artist": "NOVA",
@@ -49,4 +58,11 @@
 			"genre": ["Pop"]
 		}
 	]
-}
+	let songStr  = JSON.stringify(songs);	
+
+	let jsonText = document.getElementById("jsonContent");
+	jsonText.innerHTML = songStr;
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JSON Pt2</title>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+	<style type="text/css">
+		body,html {font-size: 15px;}
+	</style>
+</head>
+
+<body>
+	<div id="song-list">&nbsp;</div>
+
+	<script language="javascript">
+		$.get( "https://pinardo88.github.io/week8/songs.json", function(data) {
+			let songStr = "";
+			data.songs.forEach((song) => {
+				songStr += `
+					<div>
+						<h2> Title: ${song.title} </h2>
+						<p> Artist: ${song.artist} </p>
+						<p> Year: ${song.releaseYear} </p>
+						<p> Genre: ${song.genre.join(", ")} </p> <br>
+					</div>
+				`
+			})
+			document.getElementById('song-list').innerHTML = songStr;  
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JSON Pt2</title>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+	<style type="text/css">
+		body,html {font-size: 15px;}
+	</style>
+</head>
+
+<body>
+	<select id="songGenreList"></select>
+	<button onclick = "filterSongs()">Filter</button>
+	<div>
+		<p>Songs:</p>
+		<div id="listOfSelectedSongs"></div>
+	</div>
+	
+	<script language="javascript">
+		let genreArr = [];
+		let songArr = [];
+
+		$.get( "https://pinardo88.github.io/week8/songs.json", function(data) {
+			
+			songArr = data.songs;
+
+			data.songs.forEach((song) => {
+				for (let genre of song.genre){
+					if (!genreArr.includes(genre)){
+						genreArr.push(genre);
+					}
+				}
+			})
+
+			// console.log("we're here" + String(genreArr))
+
+			let selectElem = document.getElementById('songGenreList');
+
+			genreArr.forEach ((genre) => {
+				let newGenre = document.createElement('option');
+				newGenre.value = genre;
+				newGenre.textContent = genre;
+				selectElem.appendChild(newGenre)
+			})
+		})
+
+		function filterSongs() {
+			console.log("button Clicked");
+
+			let selectedGenre = document.getElementById('songGenreList').value;
+			let listofSelectedSongs = document.getElementById('listOfSelectedSongs');
+
+			let filteredSongs = songArr.filter(song => song.genre.includes(selectedGenre));
+
+			let songHTMLContent = "<ul>";
+
+			filteredSongs.forEach((song) => {
+				songHTMLContent += `<li>${song.title}</li>`
+			})
+
+			songHTMLContent += "</ul>"
+
+			listofSelectedSongs.innerHTML = songHTMLContent;
+		}
+	</script>
+</body>
+</html>
